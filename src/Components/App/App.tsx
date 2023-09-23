@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**
+ * The entire application
+ */
 const App: React.FC = () => {
   return (
     <div>
