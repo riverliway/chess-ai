@@ -71,7 +71,7 @@ const createInitialGame = (): Game => ({
  * @returns The initial board with the starting position
  */
 const createDefaultBoard = (): Board => {
-  const squareMatrix = [...(new Array(BOARD_SIZE))].map(_ => [...(new Array(BOARD_SIZE))])
+  const squareMatrix = [...(new Array(BOARD_SIZE)).keys()].map(_ => [...(new Array(BOARD_SIZE)).keys()])
   const board: Board = squareMatrix.map(row => row.map(_ => undefined))
 
   board[0][0] = { player: Player.WHITE, piece: Piece.ROOK }
