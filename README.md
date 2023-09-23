@@ -1,2 +1,2 @@
-# chess-ai
-Various attempts at implementing a chess AI
+# quantum-minesweeper
+Quantum Algorithms for Solving Minesweeper
