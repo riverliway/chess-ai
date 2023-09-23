@@ -26,10 +26,13 @@ export interface Move {
   getNotation: () => string
 }
 
+/**
+ * The first index is the row and the second index is the column
+ */
 export type Board = ({ player: Player, piece: Piece } | undefined)[][]
 
 export interface Game {
   board: Board
   moves: Move[]
-  winner?: Player
+  winner?: Player | 'stalemate'
 }

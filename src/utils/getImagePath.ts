@@ -6,6 +6,6 @@ import { Player, Piece } from '../types'
  * @param piece - The piece
  * @returns The path to the image of the piece
  */
-export const getImagePath = (player: Player, piece: Piece) => {
+export const getImagePath = (player: Player, piece: Piece): string => {
   return `./assets/${player}_${piece}.png`
 }
