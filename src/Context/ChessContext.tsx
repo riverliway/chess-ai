@@ -2,18 +2,14 @@ import React, { ReactNode } from 'react'
 
 import { ChessHook, useChessHook } from './useChessHook'
 
-interface ChessContext {
-  game: ChessHook
-}
-
-const chessContext = React.createContext<ChessContext>(undefined as unknown as ChessContext)
+const chessContext = React.createContext<ChessHook>(undefined as unknown as ChessHook)
 
 /**
  * Custom hook that throws an error when chessContext is used outside of an
  * ConversationsProvider component
  * @returns the chess context
 */
-export const useChessContext = (): ChessContext => {
+export const useChessContext = (): ChessHook => {
   const context = React.useContext(chessContext)
   if (context === undefined) {
     throw new Error('useChessContext must be used within the ChessProvider')
@@ -28,12 +24,8 @@ export const useChessContext = (): ChessContext => {
 export const ChessProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const chessHook = useChessHook()
 
-  const value = {
-    game: chessHook
-  }
-
   return (
-    <chessContext.Provider value={value}>
+    <chessContext.Provider value={chessHook}>
       {children}
     </chessContext.Provider>
   )
