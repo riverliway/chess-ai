@@ -1,0 +1,37 @@
+{
+  "name": "chess-ai",
+  "version": "0.0.0",
+  "description": "Chess AI",
+  "scripts": {
+    "dev": "vite",
+    "lint": "ts-standard --fix 2> /dev/null && tsc --noEmit",
+    "ci": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riverliway/chess-ai.git"
+  },
+  "keywords": [
+    "chess",
+    "AI"
+  ],
+  "author": "River Schieberl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riverliway/chess-ai/issues"
+  },
+  "homepage": "https://github.com/riverliway/chess-ai#readme",
+  "devDependencies": {
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "ts-node": "^10.9.1",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
