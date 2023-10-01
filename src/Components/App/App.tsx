@@ -2,16 +2,17 @@ import React from 'react'
 
 import { ChessProvider } from '../../Context/ChessContext'
 
+import ChessBoard from '../Chessboard'
+
 /**
  * The entire application
  */
 const App: React.FC = () => {
-  const message = 'Hello World!'
 
   return (
     <ChessProvider>
       <div>
-        <h1>{message}</h1>
+        <ChessBoard />
       </div>
     </ChessProvider>
   )

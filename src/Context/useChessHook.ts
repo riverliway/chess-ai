@@ -77,8 +77,8 @@ const createDefaultBoard = (): Board => {
   board[0][0] = { player: Player.WHITE, piece: Piece.ROOK }
   board[0][1] = { player: Player.WHITE, piece: Piece.KNIGHT }
   board[0][2] = { player: Player.WHITE, piece: Piece.BISHOP }
-  board[0][3] = { player: Player.WHITE, piece: Piece.QUEEN }
-  board[0][4] = { player: Player.WHITE, piece: Piece.KING }
+  board[0][3] = { player: Player.WHITE, piece: Piece.KING }
+  board[0][4] = { player: Player.WHITE, piece: Piece.QUEEN }
   board[0][5] = { player: Player.WHITE, piece: Piece.BISHOP }
   board[0][6] = { player: Player.WHITE, piece: Piece.KNIGHT }
   board[0][7] = { player: Player.WHITE, piece: Piece.ROOK }
