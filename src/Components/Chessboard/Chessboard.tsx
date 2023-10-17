@@ -6,7 +6,7 @@ import styles from './Chessboard.module.css'
 import ChessSquare from './ChessSquare'
 
 /**
- * Setting up the chess board at the start of a new game.
+ * The chess board with all of the pieces
  */
 const ChessBoard: React.FC = () => {
   const chessContext = useChessContext()
