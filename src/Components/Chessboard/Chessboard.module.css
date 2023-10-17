@@ -1,0 +1,8 @@
+.chessboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.chessboardRow {
+  display: flex;
+}

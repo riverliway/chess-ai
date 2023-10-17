@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ChessProvider } from '../../Context/ChessContext'
 
-import ChessBoard from '../Chessboard'
+import ChessBoard from '..//Chessboard/Chessboard'
 
 /**
  * The entire application

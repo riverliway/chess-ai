@@ -26,7 +26,7 @@ export interface Move {
   getNotation: () => string
 }
 
-type BoardSquare = { player: Player, piece: Piece } | undefined
+export type BoardSquare = { player: Player, piece: Piece } | undefined
 
 /**
  * The first index is the row (`x`) and the second index is the column (`y`)
