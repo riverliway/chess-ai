@@ -26,13 +26,18 @@ export interface Move {
   getNotation: () => string
 }
 
+type BoardSquare = { player: Player, piece: Piece } | undefined
+
 /**
- * The first index is the row and the second index is the column
+ * The first index is the row (`x`) and the second index is the column (`y`)
  */
-export type Board = ({ player: Player, piece: Piece } | undefined)[][]
+export type Board = BoardSquare[][]
 
 export interface Game {
   board: Board
   moves: Move[]
+  /**
+   * The winner is either one of the players, a stalemate or undefined if the game is still in progress
+   */
   winner?: Player | 'stalemate'
 }

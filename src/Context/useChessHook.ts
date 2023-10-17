@@ -7,6 +7,13 @@ const BOARD_SIZE = 8
 
 export interface ChessHook {
   game: Game
+  /**
+   * Moves a piece from the `from` position to the `to` position.
+   * If there is no piece at the `from` position, nothing happens.
+   * If there is a piece at the `to` position, it is captured.
+   * @param from - The position to move from
+   * @param to - The position to move to
+   */
   move: (from: Position, to: Position) => void
   reset: () => void
 }
@@ -18,33 +25,32 @@ export const useChessHook = (): ChessHook => {
   const [game, setGame] = useState<Game>(createInitialGame())
 
   const move = (from: Position, to: Position): void => {
-    setGame(game => {
-      const piece = game.board[from.y][from.x]
-      if (!piece) {
-        return game
-      }
+    const square = game.board[from.x][from.y]
+    if (!square) {
+      return
+    }
 
-      // Create a copy of the board to avoid mutating the state
-      const board = game.board.map(row => [...row])
+    // Create a copy of the board to avoid mutating the state
+    const tempNewBoard = game.board.map(row => [...row])
 
-      board[to.y][to.x] = piece
-      board[from.y][from.x] = undefined
+    tempNewBoard[to.x][to.y] = square
+    tempNewBoard[from.x][from.y] = undefined
 
-      return {
-        board,
-        moves: [
-          ...game.moves,
-          {
-            player: nextPlayer(piece.player),
-            piece: piece.piece,
-            from,
-            to,
-            getNotation: (): string => {
-              return 'todo'
-            }
+    setGame({
+      board: tempNewBoard,
+      moves: [
+        ...game.moves,
+        {
+          player: nextPlayer(square.player),
+          piece: square.piece,
+          from,
+          to,
+          getNotation: (): string => {
+            // We'll figure this out later
+            return 'todo'
           }
-        ]
-      }
+        }
+      ]
     })
   }
 
