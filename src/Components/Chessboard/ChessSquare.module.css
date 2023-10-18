@@ -1,0 +1,17 @@
+.chessSquare {
+  width: 7vw;
+  height: 7vw;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.blackSquare {
+  background-color: #b58863;
+}
+
+.whiteSquare {
+  background-color: #f0d9b5;
+}
